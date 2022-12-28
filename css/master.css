@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&family=Raleway:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --fromGradient: hsl(6, 100%, 80%);
+    --toGradient:  hsl(335, 100%, 65%);
+    --PaleBlue: hsl(243, 100%, 93%);
+    --GrayishBlue: hsl(229, 7%, 55%);
+    --DarkBlue: hsl(228, 56%, 26%);
+    --VeryDarkBlue: hsl(229, 57%, 11%);
+    --RalewayFontFamily: 'Raleway', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--VeryDarkBlue,rgb(6, 6, 88));
+    background-image: url(../images/bg-desktop.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    min-width: 30rem;
+    min-height: 30rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 375px) and (max-width: 1000px) {
+    article {
+        flex-direction: column;
+    }
+
+    .fylo {
+        min-width: 21rem !important;
+        margin-left: 1rem;
+    }
+
+    .data {
+        max-width: 25rem !important;
+        min-width: 1rem !important;
+    }
+
+    .gradient-box::after {
+        left: 92% !important;
+    }
+
+    .notify {
+        left: 50% !important;
+        bottom: -50% !important;
+        transform: translate(-50%,240%);
+        border-radius: .7rem !important;
+    }
+
+    .notify::after {
+        display: none;
+    }
+}
+
+.fylo {
+    background-color: var(--DarkBlue);
+    min-width: 20rem;
+    min-height: 13rem;
+    border-radius: .5rem 6rem .5rem .5rem;
+    margin-right: 1rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.images {
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    display: flex;
+}
+
+.document,
+.folder,
+.upload {
+    background-color: var(--VeryDarkBlue);
+    margin: 0 .6rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: .6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.data {
+    margin-top: 2rem;
+    background-color: var(--DarkBlue);
+    min-height: 11rem;
+    min-width: 40rem;
+    border-radius: .7rem;
+    padding: 2.5rem;
+    color: var(--PaleBlue);
+    font-family: var(--RalewayFontFamily);
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,auto);
+    position: relative;
+}
+
+.info {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+    font-weight: 400;
+}
+
+.info span {
+    font-weight: 700;
+}
+
+.notify {
+    background-color: white;
+    width: 12rem;
+    height: 5rem;
+    position: absolute;
+    color: gray;
+    font-size: .9rem;
+    font-weight: 700;
+    font-family: var(--RalewayFontFamily);
+    text-transform: uppercase;
+    left: 60%;
+    top: -30%;
+    border-radius: .7rem;
+    border-bottom-right-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.notify::after {
+    content: '';
+    clip-path: polygon(100% 0, 62% 56%, 100% 100%);
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    bottom: -40%;
+    right: 0;
+}
+
+.notify span {
+    font-weight: bolder !important;
+    color: black;
+    font-size: 3rem !important;
+    margin-right: .5rem;
+}
+
+.gradient {
+    grid-row: 2 / 3;
+    grid-column: 1 / 4;
+    width: 100%;
+    height: 1.5rem;
+    background-color: rgba(10, 10, 61, 0.568);
+    border-radius: 1rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.gradient-box {
+    position: absolute;
+    top: .25rem;
+    left: .1rem;
+    width: 70%;
+    height: 1rem;
+    background-image: linear-gradient(to right, var(--fromGradient), var(--toGradient));
+    border-radius: 1rem;
+    outline: black solid .2rem;
+}
+
+.gradient-box::after {
+    content: '';
+    width: .9rem;
+    height: .9rem;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 96%;
+    top: 5%;
+}
+
+.range {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    font-weight: 700;
+}
+
+.attribution {
+    position: absolute;
+    align-self: flex-end;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 2rem;
+    color: var(--PaleBlue);
+    word-spacing: .1rem;
+    font-size: 1.2rem !important;
+}
+
+a {
+    margin-left: .2rem;
+    color: hsl(335, 100%, 65%) !important;
+}
