@@ -37,6 +37,9 @@ article {
 }
 
 @media (min-width: 375px) and (max-width: 1000px) {
+    body {
+        background-image: url(../images/bg-mobile.png) !important;
+    }
     article {
         flex-direction: column;
     }
